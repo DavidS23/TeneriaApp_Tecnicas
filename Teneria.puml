@@ -1,0 +1,455 @@
+@startuml
+abstract class com.tenerianoe.ejb.AbstractFacade
+annotation java.lang.Override
+annotation javax.annotation.PostConstruct
+annotation javax.ejb.EJB
+annotation javax.ejb.Local
+annotation javax.ejb.Stateless
+annotation javax.faces.bean.ManagedBean
+annotation javax.faces.bean.ViewScoped
+annotation javax.faces.convert.FacesConverter
+annotation javax.faces.view.ViewScoped
+annotation javax.inject.Named
+annotation javax.persistence.Column
+annotation javax.persistence.Entity
+annotation javax.persistence.GeneratedValue
+annotation javax.persistence.Id
+annotation javax.persistence.JoinColumn
+annotation javax.persistence.ManyToOne
+annotation javax.persistence.OneToOne
+annotation javax.persistence.PersistenceContext
+annotation javax.persistence.Table
+annotation javax.persistence.Temporal
+class com.tenerianoe.controller.Backup
+class com.tenerianoe.controller.EntradaProductoController
+class com.tenerianoe.controller.FacturaController
+class com.tenerianoe.controller.LoginController
+class com.tenerianoe.controller.ParametrizacionController
+class com.tenerianoe.controller.PlantillaController
+class com.tenerianoe.controller.ProduccionController
+class com.tenerianoe.controller.ProductoController
+class com.tenerianoe.controller.ProveedorController
+class com.tenerianoe.controller.UsuarioController
+class com.tenerianoe.controller.prueba
+class com.tenerianoe.ejb.CatalogoProductoFacade
+class com.tenerianoe.ejb.CatalogoProveedorFacade
+class com.tenerianoe.ejb.DetalleFacturaFacade
+class com.tenerianoe.ejb.DetalleProduccionFacade
+class com.tenerianoe.ejb.EtapaFacade
+class com.tenerianoe.ejb.FacturaFacade
+class com.tenerianoe.ejb.InsumosPorcentajeFacade
+class com.tenerianoe.ejb.PersonaFacade
+class com.tenerianoe.ejb.ProduccionFacade
+class com.tenerianoe.ejb.UsuarioFacade
+class com.tenerianoe.model.CatalogoProveedor
+class com.tenerianoe.model.DetalleFactura
+class com.tenerianoe.model.DetalleProduccion
+class com.tenerianoe.model.Etapa
+class com.tenerianoe.model.Factura
+class com.tenerianoe.model.InsumosPorcentaje
+class com.tenerianoe.model.Persona
+class com.tenerianoe.model.Produccion
+class com.tenerianoe.model.Usuario
+class com.tenerianoe.model.catalogo_producto
+class com.tenerianoe.report.ReporteProveedor
+class converter.EntityConverter
+class java.io.IOException
+class java.lang.reflect.Field
+class java.math.BigDecimal
+class java.sql.SQLException
+class java.text.SimpleDateFormat
+class java.util.ArrayList
+class java.util.Date
+class java.util.List
+class java.util.Objects
+class javax.faces.application.FacesMessage
+class javax.faces.component.UIComponent
+class javax.faces.context.FacesContext
+class javax.persistence.CascadeType
+class javax.persistence.EmbeddedId
+class javax.persistence.EntityManager
+class javax.persistence.ForeignKey
+class javax.persistence.GenerationType
+class javax.persistence.Query
+class javax.persistence.TemporalType
+class javax.servlet.ServletContext
+class javax.servlet.http.HttpServletResponse
+class net.sf.jasperreports.engine.export.JRPdfExporter
+class net.sf.jasperreports.engine.util.JRLoader
+class org.apache.commons.codec.digest.DigestUtils
+class org.primefaces.event.CellEditEvent
+class org.primefaces.event.SelectEvent
+interface com.tenerianoe.ejb.CatalogoProductoFacadeLocal
+interface com.tenerianoe.ejb.CatalogoProveedorFacadeLocal
+interface com.tenerianoe.ejb.DetalleFacturaFacadeLocal
+interface com.tenerianoe.ejb.DetalleProduccionFacadeLocal
+interface com.tenerianoe.ejb.EtapaFacadeLocal
+interface com.tenerianoe.ejb.FacturaFacadeLocal
+interface com.tenerianoe.ejb.InsumosPorcentajeFacadeLocal
+interface com.tenerianoe.ejb.PersonaFacadeLocal
+interface com.tenerianoe.ejb.ProduccionFacadeLocal
+interface com.tenerianoe.ejb.UsuarioFacadeLocal
+interface java.io.Serializable
+interface javax.faces.convert.Converter
+com.tenerianoe.ejb.AbstractFacade ..> java.util.List
+com.tenerianoe.ejb.AbstractFacade ..> javax.persistence.EntityManager
+com.tenerianoe.controller.Backup ..> javax.faces.bean.ManagedBean
+com.tenerianoe.controller.Backup ..> java.text.SimpleDateFormat
+com.tenerianoe.controller.Backup ..> java.util.Date
+com.tenerianoe.controller.Backup ..> javax.faces.context.FacesContext
+com.tenerianoe.controller.Backup ..> javax.servlet.ServletContext
+com.tenerianoe.controller.Backup --|> java.io.Serializable
+com.tenerianoe.controller.EntradaProductoController ..> javax.annotation.PostConstruct
+com.tenerianoe.controller.EntradaProductoController ..> javax.ejb.EJB
+com.tenerianoe.controller.EntradaProductoController ..> javax.faces.bean.ManagedBean
+com.tenerianoe.controller.EntradaProductoController ..> javax.faces.bean.ViewScoped
+com.tenerianoe.controller.EntradaProductoController ..> com.tenerianoe.model.CatalogoProveedor
+com.tenerianoe.controller.EntradaProductoController ..> com.tenerianoe.model.DetalleFactura
+com.tenerianoe.controller.EntradaProductoController ..> com.tenerianoe.model.Factura
+com.tenerianoe.controller.EntradaProductoController ..> com.tenerianoe.model.catalogo_producto
+com.tenerianoe.controller.EntradaProductoController ..> com.tenerianoe.report.ReporteProveedor
+com.tenerianoe.controller.EntradaProductoController ..> java.math.BigDecimal
+com.tenerianoe.controller.EntradaProductoController ..> java.sql.SQLException
+com.tenerianoe.controller.EntradaProductoController ..> java.util.ArrayList
+com.tenerianoe.controller.EntradaProductoController ..> java.util.List
+com.tenerianoe.controller.EntradaProductoController ..> javax.faces.application.FacesMessage
+com.tenerianoe.controller.EntradaProductoController ..> javax.faces.context.FacesContext
+com.tenerianoe.controller.EntradaProductoController ..> javax.servlet.ServletContext
+com.tenerianoe.controller.EntradaProductoController ..> org.primefaces.event.CellEditEvent
+com.tenerianoe.controller.EntradaProductoController ..> com.tenerianoe.ejb.CatalogoProductoFacadeLocal
+com.tenerianoe.controller.EntradaProductoController ..> com.tenerianoe.ejb.CatalogoProveedorFacadeLocal
+com.tenerianoe.controller.EntradaProductoController ..> com.tenerianoe.ejb.DetalleFacturaFacadeLocal
+com.tenerianoe.controller.EntradaProductoController ..> com.tenerianoe.ejb.FacturaFacadeLocal
+com.tenerianoe.controller.EntradaProductoController --|> java.io.Serializable
+com.tenerianoe.controller.FacturaController ..> javax.annotation.PostConstruct
+com.tenerianoe.controller.FacturaController ..> javax.ejb.EJB
+com.tenerianoe.controller.FacturaController ..> javax.faces.bean.ViewScoped
+com.tenerianoe.controller.FacturaController ..> javax.inject.Named
+com.tenerianoe.controller.FacturaController ..> com.tenerianoe.ejb.DetalleFacturaFacade
+com.tenerianoe.controller.FacturaController ..> com.tenerianoe.model.CatalogoProveedor
+com.tenerianoe.controller.FacturaController ..> com.tenerianoe.model.DetalleFactura
+com.tenerianoe.controller.FacturaController ..> com.tenerianoe.model.Factura
+com.tenerianoe.controller.FacturaController ..> com.tenerianoe.model.catalogo_producto
+com.tenerianoe.controller.FacturaController ..> java.math.BigDecimal
+com.tenerianoe.controller.FacturaController ..> java.util.ArrayList
+com.tenerianoe.controller.FacturaController ..> java.util.List
+com.tenerianoe.controller.FacturaController ..> javax.faces.application.FacesMessage
+com.tenerianoe.controller.FacturaController ..> javax.faces.context.FacesContext
+com.tenerianoe.controller.FacturaController ..> org.primefaces.event.SelectEvent
+com.tenerianoe.controller.FacturaController ..> com.tenerianoe.ejb.CatalogoProductoFacadeLocal
+com.tenerianoe.controller.FacturaController ..> com.tenerianoe.ejb.CatalogoProveedorFacadeLocal
+com.tenerianoe.controller.FacturaController ..> com.tenerianoe.ejb.FacturaFacadeLocal
+com.tenerianoe.controller.LoginController ..> javax.annotation.PostConstruct
+com.tenerianoe.controller.LoginController ..> javax.ejb.EJB
+com.tenerianoe.controller.LoginController ..> javax.faces.view.ViewScoped
+com.tenerianoe.controller.LoginController ..> javax.inject.Named
+com.tenerianoe.controller.LoginController ..> com.tenerianoe.model.Usuario
+com.tenerianoe.controller.LoginController ..> java.io.IOException
+com.tenerianoe.controller.LoginController ..> javax.faces.application.FacesMessage
+com.tenerianoe.controller.LoginController ..> javax.faces.context.FacesContext
+com.tenerianoe.controller.LoginController ..> com.tenerianoe.ejb.UsuarioFacadeLocal
+com.tenerianoe.controller.LoginController --|> java.io.Serializable
+com.tenerianoe.controller.ParametrizacionController ..> javax.annotation.PostConstruct
+com.tenerianoe.controller.ParametrizacionController ..> javax.ejb.EJB
+com.tenerianoe.controller.ParametrizacionController ..> javax.faces.bean.ManagedBean
+com.tenerianoe.controller.ParametrizacionController ..> javax.faces.bean.ViewScoped
+com.tenerianoe.controller.ParametrizacionController ..> com.tenerianoe.model.Etapa
+com.tenerianoe.controller.ParametrizacionController ..> com.tenerianoe.model.InsumosPorcentaje
+com.tenerianoe.controller.ParametrizacionController ..> com.tenerianoe.model.catalogo_producto
+com.tenerianoe.controller.ParametrizacionController ..> com.tenerianoe.report.ReporteProveedor
+com.tenerianoe.controller.ParametrizacionController ..> java.sql.SQLException
+com.tenerianoe.controller.ParametrizacionController ..> java.util.List
+com.tenerianoe.controller.ParametrizacionController ..> javax.faces.application.FacesMessage
+com.tenerianoe.controller.ParametrizacionController ..> javax.faces.context.FacesContext
+com.tenerianoe.controller.ParametrizacionController ..> javax.servlet.ServletContext
+com.tenerianoe.controller.ParametrizacionController ..> com.tenerianoe.ejb.CatalogoProductoFacadeLocal
+com.tenerianoe.controller.ParametrizacionController ..> com.tenerianoe.ejb.EtapaFacadeLocal
+com.tenerianoe.controller.ParametrizacionController ..> com.tenerianoe.ejb.InsumosPorcentajeFacadeLocal
+com.tenerianoe.controller.ParametrizacionController --|> java.io.Serializable
+com.tenerianoe.controller.PlantillaController ..> javax.faces.view.ViewScoped
+com.tenerianoe.controller.PlantillaController ..> javax.inject.Named
+com.tenerianoe.controller.PlantillaController ..> com.tenerianoe.model.Usuario
+com.tenerianoe.controller.PlantillaController ..> javax.faces.context.FacesContext
+com.tenerianoe.controller.PlantillaController --|> java.io.Serializable
+com.tenerianoe.controller.ProduccionController ..> javax.annotation.PostConstruct
+com.tenerianoe.controller.ProduccionController ..> javax.ejb.EJB
+com.tenerianoe.controller.ProduccionController ..> javax.faces.bean.ManagedBean
+com.tenerianoe.controller.ProduccionController ..> javax.faces.bean.ViewScoped
+com.tenerianoe.controller.ProduccionController ..> com.tenerianoe.model.DetalleProduccion
+com.tenerianoe.controller.ProduccionController ..> com.tenerianoe.model.InsumosPorcentaje
+com.tenerianoe.controller.ProduccionController ..> com.tenerianoe.model.Produccion
+com.tenerianoe.controller.ProduccionController ..> com.tenerianoe.model.catalogo_producto
+com.tenerianoe.controller.ProduccionController ..> java.util.List
+com.tenerianoe.controller.ProduccionController ..> com.tenerianoe.ejb.CatalogoProductoFacadeLocal
+com.tenerianoe.controller.ProduccionController ..> com.tenerianoe.ejb.DetalleProduccionFacadeLocal
+com.tenerianoe.controller.ProduccionController ..> com.tenerianoe.ejb.InsumosPorcentajeFacadeLocal
+com.tenerianoe.controller.ProduccionController ..> com.tenerianoe.ejb.ProduccionFacadeLocal
+com.tenerianoe.controller.ProduccionController --|> java.io.Serializable
+com.tenerianoe.controller.ProductoController ..> javax.annotation.PostConstruct
+com.tenerianoe.controller.ProductoController ..> javax.ejb.EJB
+com.tenerianoe.controller.ProductoController ..> javax.faces.view.ViewScoped
+com.tenerianoe.controller.ProductoController ..> javax.inject.Named
+com.tenerianoe.controller.ProductoController ..> com.tenerianoe.model.catalogo_producto
+com.tenerianoe.controller.ProductoController ..> com.tenerianoe.report.ReporteProveedor
+com.tenerianoe.controller.ProductoController ..> java.sql.SQLException
+com.tenerianoe.controller.ProductoController ..> java.util.List
+com.tenerianoe.controller.ProductoController ..> javax.faces.application.FacesMessage
+com.tenerianoe.controller.ProductoController ..> javax.faces.context.FacesContext
+com.tenerianoe.controller.ProductoController ..> javax.servlet.ServletContext
+com.tenerianoe.controller.ProductoController ..> com.tenerianoe.ejb.CatalogoProductoFacadeLocal
+com.tenerianoe.controller.ProductoController --|> java.io.Serializable
+com.tenerianoe.controller.ProveedorController ..> javax.annotation.PostConstruct
+com.tenerianoe.controller.ProveedorController ..> javax.ejb.EJB
+com.tenerianoe.controller.ProveedorController ..> javax.faces.view.ViewScoped
+com.tenerianoe.controller.ProveedorController ..> javax.inject.Named
+com.tenerianoe.controller.ProveedorController ..> com.tenerianoe.model.CatalogoProveedor
+com.tenerianoe.controller.ProveedorController ..> com.tenerianoe.report.ReporteProveedor
+com.tenerianoe.controller.ProveedorController ..> java.sql.SQLException
+com.tenerianoe.controller.ProveedorController ..> java.util.List
+com.tenerianoe.controller.ProveedorController ..> javax.faces.application.FacesMessage
+com.tenerianoe.controller.ProveedorController ..> javax.faces.context.FacesContext
+com.tenerianoe.controller.ProveedorController ..> javax.servlet.ServletContext
+com.tenerianoe.controller.ProveedorController ..> com.tenerianoe.ejb.CatalogoProveedorFacadeLocal
+com.tenerianoe.controller.ProveedorController --|> java.io.Serializable
+com.tenerianoe.controller.UsuarioController ..> javax.annotation.PostConstruct
+com.tenerianoe.controller.UsuarioController ..> javax.ejb.EJB
+com.tenerianoe.controller.UsuarioController ..> javax.faces.view.ViewScoped
+com.tenerianoe.controller.UsuarioController ..> javax.inject.Named
+com.tenerianoe.controller.UsuarioController ..> com.tenerianoe.model.Persona
+com.tenerianoe.controller.UsuarioController ..> com.tenerianoe.model.Usuario
+com.tenerianoe.controller.UsuarioController ..> java.text.SimpleDateFormat
+com.tenerianoe.controller.UsuarioController ..> java.util.Date
+com.tenerianoe.controller.UsuarioController ..> java.util.List
+com.tenerianoe.controller.UsuarioController ..> javax.faces.application.FacesMessage
+com.tenerianoe.controller.UsuarioController ..> javax.faces.context.FacesContext
+com.tenerianoe.controller.UsuarioController ..> org.apache.commons.codec.digest.DigestUtils
+com.tenerianoe.controller.UsuarioController ..> com.tenerianoe.ejb.PersonaFacadeLocal
+com.tenerianoe.controller.UsuarioController ..> com.tenerianoe.ejb.UsuarioFacadeLocal
+com.tenerianoe.controller.UsuarioController --|> java.io.Serializable
+com.tenerianoe.controller.prueba ..> javax.faces.bean.ManagedBean
+com.tenerianoe.controller.prueba ..> javax.faces.view.ViewScoped
+com.tenerianoe.controller.prueba ..> javax.faces.application.FacesMessage
+com.tenerianoe.controller.prueba ..> javax.faces.context.FacesContext
+com.tenerianoe.controller.prueba --|> java.io.Serializable
+com.tenerianoe.ejb.CatalogoProductoFacade --|> com.tenerianoe.ejb.AbstractFacade
+com.tenerianoe.ejb.CatalogoProductoFacade ..> java.lang.Override
+com.tenerianoe.ejb.CatalogoProductoFacade ..> javax.ejb.Stateless
+com.tenerianoe.ejb.CatalogoProductoFacade ..> javax.persistence.PersistenceContext
+com.tenerianoe.ejb.CatalogoProductoFacade ..> com.tenerianoe.model.catalogo_producto
+com.tenerianoe.ejb.CatalogoProductoFacade ..> javax.persistence.EntityManager
+com.tenerianoe.ejb.CatalogoProductoFacade --|> com.tenerianoe.ejb.CatalogoProductoFacadeLocal
+com.tenerianoe.ejb.CatalogoProveedorFacade --|> com.tenerianoe.ejb.AbstractFacade
+com.tenerianoe.ejb.CatalogoProveedorFacade ..> java.lang.Override
+com.tenerianoe.ejb.CatalogoProveedorFacade ..> javax.ejb.Stateless
+com.tenerianoe.ejb.CatalogoProveedorFacade ..> javax.persistence.PersistenceContext
+com.tenerianoe.ejb.CatalogoProveedorFacade ..> com.tenerianoe.model.CatalogoProveedor
+com.tenerianoe.ejb.CatalogoProveedorFacade ..> javax.persistence.EntityManager
+com.tenerianoe.ejb.CatalogoProveedorFacade --|> com.tenerianoe.ejb.CatalogoProveedorFacadeLocal
+com.tenerianoe.ejb.DetalleFacturaFacade --|> com.tenerianoe.ejb.AbstractFacade
+com.tenerianoe.ejb.DetalleFacturaFacade ..> java.lang.Override
+com.tenerianoe.ejb.DetalleFacturaFacade ..> javax.ejb.Stateless
+com.tenerianoe.ejb.DetalleFacturaFacade ..> javax.persistence.PersistenceContext
+com.tenerianoe.ejb.DetalleFacturaFacade ..> com.tenerianoe.model.DetalleFactura
+com.tenerianoe.ejb.DetalleFacturaFacade ..> javax.persistence.EntityManager
+com.tenerianoe.ejb.DetalleFacturaFacade --|> com.tenerianoe.ejb.DetalleFacturaFacadeLocal
+com.tenerianoe.ejb.DetalleProduccionFacade --|> com.tenerianoe.ejb.AbstractFacade
+com.tenerianoe.ejb.DetalleProduccionFacade ..> java.lang.Override
+com.tenerianoe.ejb.DetalleProduccionFacade ..> javax.ejb.Stateless
+com.tenerianoe.ejb.DetalleProduccionFacade ..> javax.persistence.PersistenceContext
+com.tenerianoe.ejb.DetalleProduccionFacade ..> com.tenerianoe.model.DetalleProduccion
+com.tenerianoe.ejb.DetalleProduccionFacade ..> java.util.List
+com.tenerianoe.ejb.DetalleProduccionFacade ..> javax.persistence.EntityManager
+com.tenerianoe.ejb.DetalleProduccionFacade ..> javax.persistence.Query
+com.tenerianoe.ejb.DetalleProduccionFacade --|> com.tenerianoe.ejb.DetalleProduccionFacadeLocal
+com.tenerianoe.ejb.EtapaFacade --|> com.tenerianoe.ejb.AbstractFacade
+com.tenerianoe.ejb.EtapaFacade ..> java.lang.Override
+com.tenerianoe.ejb.EtapaFacade ..> javax.ejb.Stateless
+com.tenerianoe.ejb.EtapaFacade ..> javax.persistence.PersistenceContext
+com.tenerianoe.ejb.EtapaFacade ..> com.tenerianoe.model.Etapa
+com.tenerianoe.ejb.EtapaFacade ..> javax.persistence.EntityManager
+com.tenerianoe.ejb.EtapaFacade --|> com.tenerianoe.ejb.EtapaFacadeLocal
+com.tenerianoe.ejb.FacturaFacade --|> com.tenerianoe.ejb.AbstractFacade
+com.tenerianoe.ejb.FacturaFacade ..> java.lang.Override
+com.tenerianoe.ejb.FacturaFacade ..> javax.ejb.Stateless
+com.tenerianoe.ejb.FacturaFacade ..> javax.persistence.PersistenceContext
+com.tenerianoe.ejb.FacturaFacade ..> com.tenerianoe.model.Factura
+com.tenerianoe.ejb.FacturaFacade ..> javax.persistence.EntityManager
+com.tenerianoe.ejb.FacturaFacade --|> com.tenerianoe.ejb.FacturaFacadeLocal
+com.tenerianoe.ejb.InsumosPorcentajeFacade --|> com.tenerianoe.ejb.AbstractFacade
+com.tenerianoe.ejb.InsumosPorcentajeFacade ..> java.lang.Override
+com.tenerianoe.ejb.InsumosPorcentajeFacade ..> javax.ejb.Stateless
+com.tenerianoe.ejb.InsumosPorcentajeFacade ..> javax.persistence.PersistenceContext
+com.tenerianoe.ejb.InsumosPorcentajeFacade ..> com.tenerianoe.model.InsumosPorcentaje
+com.tenerianoe.ejb.InsumosPorcentajeFacade ..> javax.persistence.EntityManager
+com.tenerianoe.ejb.InsumosPorcentajeFacade --|> com.tenerianoe.ejb.InsumosPorcentajeFacadeLocal
+com.tenerianoe.ejb.PersonaFacade --|> com.tenerianoe.ejb.AbstractFacade
+com.tenerianoe.ejb.PersonaFacade ..> java.lang.Override
+com.tenerianoe.ejb.PersonaFacade ..> javax.ejb.Stateless
+com.tenerianoe.ejb.PersonaFacade ..> javax.persistence.PersistenceContext
+com.tenerianoe.ejb.PersonaFacade ..> com.tenerianoe.model.Persona
+com.tenerianoe.ejb.PersonaFacade ..> javax.persistence.EntityManager
+com.tenerianoe.ejb.PersonaFacade --|> com.tenerianoe.ejb.PersonaFacadeLocal
+com.tenerianoe.ejb.ProduccionFacade --|> com.tenerianoe.ejb.AbstractFacade
+com.tenerianoe.ejb.ProduccionFacade ..> java.lang.Override
+com.tenerianoe.ejb.ProduccionFacade ..> javax.ejb.Stateless
+com.tenerianoe.ejb.ProduccionFacade ..> javax.persistence.PersistenceContext
+com.tenerianoe.ejb.ProduccionFacade ..> com.tenerianoe.model.Produccion
+com.tenerianoe.ejb.ProduccionFacade ..> java.util.ArrayList
+com.tenerianoe.ejb.ProduccionFacade ..> java.util.List
+com.tenerianoe.ejb.ProduccionFacade ..> javax.persistence.EntityManager
+com.tenerianoe.ejb.ProduccionFacade ..> javax.persistence.Query
+com.tenerianoe.ejb.ProduccionFacade --|> com.tenerianoe.ejb.ProduccionFacadeLocal
+com.tenerianoe.ejb.UsuarioFacade --|> com.tenerianoe.ejb.AbstractFacade
+com.tenerianoe.ejb.UsuarioFacade ..> java.lang.Override
+com.tenerianoe.ejb.UsuarioFacade ..> javax.ejb.Stateless
+com.tenerianoe.ejb.UsuarioFacade ..> javax.persistence.PersistenceContext
+com.tenerianoe.ejb.UsuarioFacade ..> com.tenerianoe.model.Usuario
+com.tenerianoe.ejb.UsuarioFacade ..> java.util.List
+com.tenerianoe.ejb.UsuarioFacade ..> javax.persistence.EntityManager
+com.tenerianoe.ejb.UsuarioFacade ..> javax.persistence.Query
+com.tenerianoe.ejb.UsuarioFacade ..> org.apache.commons.codec.digest.DigestUtils
+com.tenerianoe.ejb.UsuarioFacade --|> com.tenerianoe.ejb.UsuarioFacadeLocal
+com.tenerianoe.model.CatalogoProveedor ..> java.lang.Override
+com.tenerianoe.model.CatalogoProveedor ..> javax.persistence.Column
+com.tenerianoe.model.CatalogoProveedor ..> javax.persistence.Entity
+com.tenerianoe.model.CatalogoProveedor ..> javax.persistence.GeneratedValue
+com.tenerianoe.model.CatalogoProveedor ..> javax.persistence.Id
+com.tenerianoe.model.CatalogoProveedor ..> javax.persistence.Table
+com.tenerianoe.model.CatalogoProveedor ..> javax.persistence.GenerationType
+com.tenerianoe.model.CatalogoProveedor --|> java.io.Serializable
+com.tenerianoe.model.DetalleFactura ..> javax.persistence.Column
+com.tenerianoe.model.DetalleFactura ..> javax.persistence.Entity
+com.tenerianoe.model.DetalleFactura ..> javax.persistence.GeneratedValue
+com.tenerianoe.model.DetalleFactura ..> javax.persistence.Id
+com.tenerianoe.model.DetalleFactura ..> javax.persistence.JoinColumn
+com.tenerianoe.model.DetalleFactura ..> javax.persistence.ManyToOne
+com.tenerianoe.model.DetalleFactura ..> javax.persistence.Table
+com.tenerianoe.model.DetalleFactura ..> java.math.BigDecimal
+com.tenerianoe.model.DetalleFactura ..> javax.persistence.GenerationType
+com.tenerianoe.model.DetalleFactura --|> java.io.Serializable
+com.tenerianoe.model.DetalleProduccion ..> javax.persistence.Column
+com.tenerianoe.model.DetalleProduccion ..> javax.persistence.Entity
+com.tenerianoe.model.DetalleProduccion ..> javax.persistence.GeneratedValue
+com.tenerianoe.model.DetalleProduccion ..> javax.persistence.Id
+com.tenerianoe.model.DetalleProduccion ..> javax.persistence.JoinColumn
+com.tenerianoe.model.DetalleProduccion ..> javax.persistence.ManyToOne
+com.tenerianoe.model.DetalleProduccion ..> javax.persistence.Table
+com.tenerianoe.model.DetalleProduccion ..> javax.persistence.GenerationType
+com.tenerianoe.model.DetalleProduccion --|> java.io.Serializable
+com.tenerianoe.model.Etapa ..> javax.persistence.Column
+com.tenerianoe.model.Etapa ..> javax.persistence.Entity
+com.tenerianoe.model.Etapa ..> javax.persistence.GeneratedValue
+com.tenerianoe.model.Etapa ..> javax.persistence.Id
+com.tenerianoe.model.Etapa ..> javax.persistence.Table
+com.tenerianoe.model.Etapa ..> javax.persistence.GenerationType
+com.tenerianoe.model.Etapa --|> java.io.Serializable
+com.tenerianoe.model.Factura ..> java.lang.Override
+com.tenerianoe.model.Factura ..> javax.persistence.Column
+com.tenerianoe.model.Factura ..> javax.persistence.Entity
+com.tenerianoe.model.Factura ..> javax.persistence.GeneratedValue
+com.tenerianoe.model.Factura ..> javax.persistence.Id
+com.tenerianoe.model.Factura ..> javax.persistence.JoinColumn
+com.tenerianoe.model.Factura ..> javax.persistence.ManyToOne
+com.tenerianoe.model.Factura ..> javax.persistence.Table
+com.tenerianoe.model.Factura ..> javax.persistence.Temporal
+com.tenerianoe.model.Factura ..> java.math.BigDecimal
+com.tenerianoe.model.Factura ..> java.util.Date
+com.tenerianoe.model.Factura ..> javax.persistence.GenerationType
+com.tenerianoe.model.Factura ..> javax.persistence.TemporalType
+com.tenerianoe.model.Factura --|> java.io.Serializable
+com.tenerianoe.model.InsumosPorcentaje ..> java.lang.Override
+com.tenerianoe.model.InsumosPorcentaje ..> javax.persistence.Column
+com.tenerianoe.model.InsumosPorcentaje ..> javax.persistence.Entity
+com.tenerianoe.model.InsumosPorcentaje ..> javax.persistence.GeneratedValue
+com.tenerianoe.model.InsumosPorcentaje ..> javax.persistence.Id
+com.tenerianoe.model.InsumosPorcentaje ..> javax.persistence.JoinColumn
+com.tenerianoe.model.InsumosPorcentaje ..> javax.persistence.ManyToOne
+com.tenerianoe.model.InsumosPorcentaje ..> javax.persistence.Table
+com.tenerianoe.model.InsumosPorcentaje ..> javax.persistence.CascadeType
+com.tenerianoe.model.InsumosPorcentaje ..> javax.persistence.ForeignKey
+com.tenerianoe.model.InsumosPorcentaje ..> javax.persistence.GenerationType
+com.tenerianoe.model.InsumosPorcentaje --|> java.io.Serializable
+com.tenerianoe.model.Persona ..> java.lang.Override
+com.tenerianoe.model.Persona ..> javax.persistence.Column
+com.tenerianoe.model.Persona ..> javax.persistence.Entity
+com.tenerianoe.model.Persona ..> javax.persistence.GeneratedValue
+com.tenerianoe.model.Persona ..> javax.persistence.Id
+com.tenerianoe.model.Persona ..> javax.persistence.Table
+com.tenerianoe.model.Persona ..> javax.persistence.Temporal
+com.tenerianoe.model.Persona ..> java.util.Date
+com.tenerianoe.model.Persona ..> javax.persistence.GenerationType
+com.tenerianoe.model.Persona ..> javax.persistence.TemporalType
+com.tenerianoe.model.Persona --|> java.io.Serializable
+com.tenerianoe.model.Produccion ..> javax.persistence.Column
+com.tenerianoe.model.Produccion ..> javax.persistence.Entity
+com.tenerianoe.model.Produccion ..> javax.persistence.GeneratedValue
+com.tenerianoe.model.Produccion ..> javax.persistence.Id
+com.tenerianoe.model.Produccion ..> javax.persistence.Table
+com.tenerianoe.model.Produccion ..> javax.persistence.Temporal
+com.tenerianoe.model.Produccion ..> java.util.Date
+com.tenerianoe.model.Produccion ..> javax.persistence.GenerationType
+com.tenerianoe.model.Produccion ..> javax.persistence.TemporalType
+com.tenerianoe.model.Produccion --|> java.io.Serializable
+com.tenerianoe.model.Usuario ..> java.lang.Override
+com.tenerianoe.model.Usuario ..> javax.persistence.Column
+com.tenerianoe.model.Usuario ..> javax.persistence.Entity
+com.tenerianoe.model.Usuario ..> javax.persistence.Id
+com.tenerianoe.model.Usuario ..> javax.persistence.JoinColumn
+com.tenerianoe.model.Usuario ..> javax.persistence.OneToOne
+com.tenerianoe.model.Usuario ..> javax.persistence.Table
+com.tenerianoe.model.Usuario ..> java.util.Objects
+com.tenerianoe.model.Usuario ..> javax.persistence.CascadeType
+com.tenerianoe.model.Usuario --|> java.io.Serializable
+com.tenerianoe.model.catalogo_producto ..> javax.persistence.Column
+com.tenerianoe.model.catalogo_producto ..> javax.persistence.Entity
+com.tenerianoe.model.catalogo_producto ..> javax.persistence.GeneratedValue
+com.tenerianoe.model.catalogo_producto ..> javax.persistence.Id
+com.tenerianoe.model.catalogo_producto ..> javax.persistence.Table
+com.tenerianoe.model.catalogo_producto ..> javax.persistence.GenerationType
+com.tenerianoe.model.catalogo_producto --|> java.io.Serializable
+com.tenerianoe.report.ReporteProveedor ..> javax.faces.context.FacesContext
+com.tenerianoe.report.ReporteProveedor ..> javax.servlet.http.HttpServletResponse
+com.tenerianoe.report.ReporteProveedor ..> net.sf.jasperreports.engine.export.JRPdfExporter
+com.tenerianoe.report.ReporteProveedor ..> net.sf.jasperreports.engine.util.JRLoader
+converter.EntityConverter ..> java.lang.Override
+converter.EntityConverter ..> javax.faces.convert.FacesConverter
+converter.EntityConverter ..> javax.persistence.Id
+converter.EntityConverter ..> java.lang.reflect.Field
+converter.EntityConverter ..> java.util.ArrayList
+converter.EntityConverter ..> java.util.List
+converter.EntityConverter ..> javax.faces.component.UIComponent
+converter.EntityConverter ..> javax.faces.context.FacesContext
+converter.EntityConverter ..> javax.persistence.EmbeddedId
+converter.EntityConverter --|> javax.faces.convert.Converter
+com.tenerianoe.ejb.CatalogoProductoFacadeLocal ..> javax.ejb.Local
+com.tenerianoe.ejb.CatalogoProductoFacadeLocal ..> com.tenerianoe.model.catalogo_producto
+com.tenerianoe.ejb.CatalogoProductoFacadeLocal ..> java.util.List
+com.tenerianoe.ejb.CatalogoProveedorFacadeLocal ..> javax.ejb.Local
+com.tenerianoe.ejb.CatalogoProveedorFacadeLocal ..> com.tenerianoe.model.CatalogoProveedor
+com.tenerianoe.ejb.CatalogoProveedorFacadeLocal ..> java.util.List
+com.tenerianoe.ejb.DetalleFacturaFacadeLocal ..> javax.ejb.Local
+com.tenerianoe.ejb.DetalleFacturaFacadeLocal ..> com.tenerianoe.model.DetalleFactura
+com.tenerianoe.ejb.DetalleFacturaFacadeLocal ..> java.util.List
+com.tenerianoe.ejb.DetalleProduccionFacadeLocal ..> javax.ejb.Local
+com.tenerianoe.ejb.DetalleProduccionFacadeLocal ..> com.tenerianoe.model.DetalleProduccion
+com.tenerianoe.ejb.DetalleProduccionFacadeLocal ..> com.tenerianoe.model.Produccion
+com.tenerianoe.ejb.DetalleProduccionFacadeLocal ..> java.util.List
+com.tenerianoe.ejb.EtapaFacadeLocal ..> javax.ejb.Local
+com.tenerianoe.ejb.EtapaFacadeLocal ..> com.tenerianoe.model.Etapa
+com.tenerianoe.ejb.EtapaFacadeLocal ..> java.util.List
+com.tenerianoe.ejb.FacturaFacadeLocal ..> javax.ejb.Local
+com.tenerianoe.ejb.FacturaFacadeLocal ..> com.tenerianoe.model.Factura
+com.tenerianoe.ejb.FacturaFacadeLocal ..> java.util.List
+com.tenerianoe.ejb.InsumosPorcentajeFacadeLocal ..> javax.ejb.Local
+com.tenerianoe.ejb.InsumosPorcentajeFacadeLocal ..> com.tenerianoe.model.InsumosPorcentaje
+com.tenerianoe.ejb.InsumosPorcentajeFacadeLocal ..> java.util.List
+com.tenerianoe.ejb.PersonaFacadeLocal ..> javax.ejb.Local
+com.tenerianoe.ejb.PersonaFacadeLocal ..> com.tenerianoe.model.Persona
+com.tenerianoe.ejb.PersonaFacadeLocal ..> java.util.List
+com.tenerianoe.ejb.ProduccionFacadeLocal ..> javax.ejb.Local
+com.tenerianoe.ejb.ProduccionFacadeLocal ..> com.tenerianoe.model.Produccion
+com.tenerianoe.ejb.ProduccionFacadeLocal ..> java.util.List
+com.tenerianoe.ejb.UsuarioFacadeLocal ..> javax.ejb.Local
+com.tenerianoe.ejb.UsuarioFacadeLocal ..> com.tenerianoe.model.Usuario
+com.tenerianoe.ejb.UsuarioFacadeLocal ..> java.util.List
+@enduml

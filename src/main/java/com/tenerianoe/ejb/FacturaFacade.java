@@ -1,0 +1,44 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package com.tenerianoe.ejb;
+
+import com.tenerianoe.model.Factura;
+import javax.ejb.Stateless;
+import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
+import javax.persistence.Query;
+
+/**
+ *
+ * @author said
+ */
+@Stateless
+public class FacturaFacade extends AbstractFacade<Factura> implements FacturaFacadeLocal {
+
+      @PersistenceContext(unitName = "com.mycompany_TeneriaApp_war_1.0-SNAPSHOTPU")
+      private EntityManager em;
+
+      @Override
+      protected EntityManager getEntityManager() {
+            return em;
+      }
+
+      public FacturaFacade() {
+            super(Factura.class);
+      }
+
+    @Override
+    public void insertarFacturaProcedimiento(Factura factura) {
+
+        Query q= em.createNativeQuery("{call insertarFactura(?,?,?)}");
+        
+        q.setParameter(1, factura.getFechaRegistro());
+        q.setParameter(2, factura.getNumeroFactura());
+        q.setParameter(3, factura.getProveedor().getIdCatalogoProveedor());
+        q.executeUpdate();
+    }
+      
+}
